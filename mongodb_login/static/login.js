@@ -1,16 +1,16 @@
 
-let form = document.getElementById('form-id')
+let form = document.getElementById('login-id')
 let submit = document.getElementById('submit-id')
 
-form.addEventListener('submit',registerUser)
+form.addEventListener('submit',loginUser)
 
 
-async function registerUser(e){
+async function loginUser(e){
     e.preventDefault();
    
     const username = document.getElementById('username').value
     const password = document.getElementById('password').value
-    const result = await fetch('/api/register',{
+    const result = await fetch('/api/login',{
         method:'POST',
         headers:{
             "Content-Type":'application/json'
@@ -21,19 +21,15 @@ async function registerUser(e){
         })
     })
     .then((res) =>  res.json())
-<<<<<<< HEAD
-    .catch(err=> {
-        console.log(err)
-    }) 
-=======
     if(result.status === 'ok'){
+        console.log('got the token',result.data)
+        localStorage.setItem('token',result.data)
        alert('success')
     }
     else{
         alert(result.error)
     }
    
->>>>>>> 404dca8 (password-reset done)
 
    
 }
