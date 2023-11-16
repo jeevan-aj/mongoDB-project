@@ -21,19 +21,9 @@ async function registerUser(e){
         })
     })
     .then((res) =>  res.json())
-<<<<<<< HEAD
     .catch(err=> {
         console.log(err)
     }) 
-=======
-    if(result.status === 'ok'){
-       alert('success')
-    }
-    else{
-        alert(result.error)
-    }
-   
->>>>>>> 404dca8 (password-reset done)
 
    
 }
