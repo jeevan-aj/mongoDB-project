@@ -24,6 +24,15 @@ async function registerUser(e){
     .catch(err=> {
         console.log(err)
     }) 
+    if(result.status === 'ok'){
+        console.log('got the token',result.data)
+        localStorage.setItem('token',result.data)
+       alert('success')
+    }
+    else{
+        alert(result.error)
+    }
+    
 
    
 }
